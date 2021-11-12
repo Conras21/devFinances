@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 93.75%;
+}
+
 body {
     background: #f0f2f5;
     font-family: 'Poppins', sans-serif;
@@ -20,6 +24,11 @@ body {
     height: 1px;
     padding: 0;
     margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+
 }
 
 .container {
@@ -74,6 +83,10 @@ header {
 .card h3 { 
     font-weight: normal;
     font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .card p {
@@ -91,12 +104,15 @@ header {
 
 /* Table ================== */
 #data-table {
+    display: block;
     width: 100%;
     border-spacing: 0 0.5rem;
     color: #969cb3;
+
+    overflow-x: auto;
 }
 
-table th {
+table thead th {
     background: white;
 
     font-weight: normal;
@@ -125,6 +141,11 @@ table tbody tr:first-child {
     border-radius: 0.25rem 0 0 0.25rem;
 }
 
+table thead tr:last-child,
+table tbody tr:last-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
 td.descption {
     color: var(--dark-blue);
 }
@@ -137,6 +158,21 @@ td.expense {
     color: red;
 }
 
+/* Links =============== */
+a {
+    color: #3dd705;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #49AA26;
+
+}
+
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+}
 
 
 footer {
@@ -144,4 +180,16 @@ footer {
     padding: 4rem 0 2rem;
 }
 
-23:01
+/* Responsive =========== */
+@media (min-width: 800px) {
+    html {
+        font-size: 87.5%;
+    }
+
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
